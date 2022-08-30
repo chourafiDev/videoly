@@ -434,7 +434,7 @@ const Me = () => {
 };
 
 export const getServerSideProps: GetServerSideProps =
-  wrapper.getServerSideProps(() => async (context: any) => {
+  wrapper.getServerSideProps(() => async (context) => {
     const session = await getSession({ req: context.req });
 
     if (!session) {
