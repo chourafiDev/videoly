@@ -5,7 +5,7 @@ const MONGO_OPTIONS = {
   useUnifiedTopology: true,
 };
 
-const MONGO_URL = process.env.DB_CONNECTION_LOCAL;
+const MONGO_URL = process.env.DB_CONNECTION_ATLAS;
 
 const dbConnect = () => {
   if (mongoose.connection.readyState >= 1) {

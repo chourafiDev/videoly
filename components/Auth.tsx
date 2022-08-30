@@ -7,7 +7,8 @@ import { IUser } from "../types";
 //Redux
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState, AppDispatch } from "../redux/store";
-import { register, currentUser } from "../redux/features/auth/authSlice";
+import { currentUser } from "../redux/features/user/userSlice";
+import { register } from "../redux/features/auth/authSlice";
 
 type TProps = {
   classProps: string;
@@ -28,8 +29,13 @@ const Auth = ({ classProps }: TProps) => {
   const { userName, name, email, password } = formData;
 
   const dispatch = useDispatch<AppDispatch>();
-  const { user, isLoading, isSuccess, isError, messageError, isAuthenticated } =
-    useSelector((state: RootState) => state.auth);
+  const {
+    currentUser: user,
+    isLoading,
+    isSuccess,
+    isError,
+    messageError,
+  } = useSelector((state: RootState) => state.user);
 
   function closeModalLogin() {
     setIsOpenLogin(false);
