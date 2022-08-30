@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Global styles */
+@layer base {
+  .btn-outline {
+    @apply rounded-sm border py-2 text-primary tracking-wide font-inter duration-150 ease-in w-full font-semibold;
+  }
+
+  .btn-outline-primary {
+    @apply bg-white border-primary  hover:bg-primary/5;
+  }
+
+  .btn {
+    @apply rounded-sm border px-3 py-2 text-white tracking-wide font-inter duration-150 ease-in w-full font-semibold;
+  }
+
+  .btn-primary {
+    @apply bg-primary border-primary  hover:bg-primary/80;
+  }
+
+  .btn-light {
+    @apply rounded-sm border px-3 py-2 text-dark tracking-wide font-inter duration-150 ease-in w-full font-semibold;
+  }
+
+  .btn-light-primary {
+    @apply bg-white border-gray-300  hover:bg-gray-100;
+  }
+
+  .btn-disabled {
+    @apply bg-gray-100 border border-gray-100 text-gray-400 cursor-not-allowed rounded-sm px-3 py-2 w-full;
+  }
+
+  .input {
+    @apply outline-none border border-gray-100 text-gray-500 bg-gray-200 px-2 py-2 rounded-md text-[15px] focus:border-gray-300 focus:caret-primary;
+  }
+
+  .input-outline {
+    @apply outline-none border border-gray-300 text-gray-600 px-2 py-2 rounded-sm text-[15px] focus:caret-primary;
+  }
+
+  .card {
+    @apply rounded-md p-5;
+  }
+}
+
+.videos::-webkit-scrollbar {
+  width: 0px;
+}
+
+.custome-shadow {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.bg-auth {
+  background-image: url("/assets/bg-auth.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.video-details-bg {
+  background-image: url("/assets/details-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(237, 237, 237);
+  border-radius: 40px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
