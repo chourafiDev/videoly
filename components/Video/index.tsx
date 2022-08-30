@@ -34,7 +34,6 @@ const Index: NextPage<IProps> = ({ post, postState, handleLikeAnUnlike }) => {
   const { currentUser: user } = useSelector((state: RootState) => state.user);
 
   const dispatch = useDispatch<AppDispatch>();
-  const { comments } = useSelector((state: RootState) => state.comment);
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -48,10 +47,11 @@ const Index: NextPage<IProps> = ({ post, postState, handleLikeAnUnlike }) => {
     }
   };
 
-  useEffect(() => {
-    dispatch(getComments(post._id));
-    dispatch(getPost(post._id));
-  }, [dispatch, post]);
+  // useEffect(() => {
+  //   if (post) {
+  //     dispatch(getPost(post._id));
+  //   }
+  // }, [dispatch, post]);
 
   useEffect(() => {
     if (post && videoRef?.current) {
@@ -155,39 +155,40 @@ const Index: NextPage<IProps> = ({ post, postState, handleLikeAnUnlike }) => {
             )}
           </div>
           <div className="flex flex-col gap-4">
-            {postState.likes?.includes(user?._id) ? (
-              <div className="text-center">
-                <div
-                  className="bg-gray-200 hover:bg-gray-300 duration-200 ease-linear rounded-full p-2 cursor-pointer"
-                  onClick={() => handleLikeAnUnlike(post._id)}
-                >
-                  <MdFavorite className="text-2xl text-primary" />
+            {post.likes?.includes(user?._id) ? (
+              <Link href={`/video/${post._id}`}>
+                <div className="text-center">
+                  <div
+                    className="bg-gray-200 hover:bg-gray-300 duration-200 ease-linear rounded-full p-2 cursor-pointer"
+                    // onClick={() => handleLikeAnUnlike(post._id)}
+                  >
+                    <MdFavorite className="text-2xl text-primary" />
+                  </div>
+                  <p className="text-dark/70 text-sm font-semibold">
+                    {post.likes?.length || 0}
+                  </p>
                 </div>
-                <p className="text-dark/70 text-sm font-semibold">
-                  {postState.likes?.length || 0}
-                </p>
-              </div>
+              </Link>
             ) : (
-              <div className="text-center">
-                <div
-                  className="bg-gray-200 hover:bg-gray-300 duration-200 ease-linear rounded-full p-2 cursor-pointer"
-                  onClick={() => handleLikeAnUnlike(post._id)}
-                >
-                  <MdFavorite className="text-2xl text-dark/90" />
+              <Link href={`/video/${post._id}`}>
+                <div className="text-center">
+                  <div
+                    className="bg-gray-200 hover:bg-gray-300 duration-200 ease-linear rounded-full p-2 cursor-pointer"
+                    // onClick={() => handleLikeAnUnlike(post._id)}
+                  >
+                    <MdFavorite className="text-2xl text-dark/90" />
+                  </div>
+                  <p className="text-dark/70 text-sm font-semibold">
+                    {post.likes?.length || 0}
+                  </p>
                 </div>
-                <p className="text-dark/70 text-sm font-semibold">
-                  {postState.likes?.length || 0}
-                </p>
-              </div>
+              </Link>
             )}
             <Link href={`/video/${post._id}`}>
               <a className="text-center">
                 <div className="bg-gray-200 hover:bg-gray-300 duration-200 ease-linear  rounded-full p-2">
                   <AiFillMessage className="text-2xl text-dark" />
                 </div>
-                <p className="text-dark/70 text-sm font-semibold">
-                  {comments.length || 0}
-                </p>
               </a>
             </Link>
             <div className="relative">

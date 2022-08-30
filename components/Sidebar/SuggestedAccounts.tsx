@@ -20,7 +20,7 @@ const SuggestedAccounts = () => {
       <p className="text-dark/50 text-sm my-4 hidden xl:block">
         Suggested accounts
       </p>
-      <div className="">
+      <div className="flex lg:justify-start justify-center">
         <ul className="">
           {users &&
             users.map((user) => (
@@ -46,7 +46,6 @@ const SuggestedAccounts = () => {
                     </div>
                   </a>
                 </Link>
-                {/* {showProfile === user._id && ( */}
 
                 <div
                   className="w-full bg-white custome-shadow p-4 rounded-[10px] absolute top-13 right-0 z-20 hidden xl:block"
@@ -92,7 +91,6 @@ const SuggestedAccounts = () => {
                     </p>
                   </div>
                 </div>
-                {/* )} */}
               </li>
             ))}
         </ul>

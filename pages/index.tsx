@@ -23,7 +23,7 @@ const Home = ({ posts }: IProps) => {
   const { post: postState, isSuccess } = useSelector(
     (state: RootState) => state.post
   );
-  console.log("postState", postState);
+
   useEffect(() => {
     dispatch(getPosts());
   }, [dispatch, isSuccess]);

@@ -48,14 +48,4 @@ const postSchema = new mongoose.Schema(
 //Post caption index
 postSchema.index({ caption: "text" });
 
-//Virtual populate
-postSchema.virtual("comments", {
-  ref: "Comment",
-  localField: "_id", // Find tour where `localField`
-  foreignField: "postId", // is equal to `foreignField`
-});
-
-postSchema.set("toObject", { virtuals: true });
-postSchema.set("toJSON", { virtuals: true });
-
 export default mongoose.models.Post || mongoose.model("Post", postSchema);

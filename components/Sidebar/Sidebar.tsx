@@ -43,7 +43,7 @@ const Sidebar = () => {
         )}
       </div>
       {showSidebar && (
-        <div className="lg:w-[27%] md:w-[10%] h-[92vh] fixed overflow-hidden xl:hover:overflow-y-auto mt-20 flex flex-col justify-start mb-10 border-r-2 border-gray-100 xl:border-0">
+        <div className="lg:w-[27%] md:w-[10%] h-[92vh] fixed overflow-scroll lg:overflow-hidden xl:hover:overflow-y-auto mt-16 flex flex-col justify-start mb-10 border-r-2 border-gray-100 xl:border-0">
           <div className="xl:border-b border-gray-200 xl:pb-4">
             <Link href="/">
               <div className={`text-primary ${normalLink}`}>

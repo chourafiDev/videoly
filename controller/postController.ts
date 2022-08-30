@@ -8,15 +8,10 @@ import User from "../model/User";
 //@type: Public
 export const allPosts = catchAsynError(
   async (req: NextApiRequest, res: NextApiResponse) => {
-    const posts = await Post.find({ publish: "public" })
-      // .populate({
-      //   path: "userId",
-      //   select: "userName image -_id",
-      // })
-      .populate({
-        path: "comments",
-        strictPopulate: false,
-      });
+    const posts = await Post.find({ publish: "public" }).populate({
+      path: "userId",
+      select: "userName image -_id",
+    });
 
     res.status(200).json({
       success: true,

@@ -8,11 +8,11 @@ const Discover = () => {
   const { topic } = router.query;
 
   const activeStyle =
-    "xl:border hover:bg-light xl:border-primary px-3 py-2 rounded xl:rounded-full flex items-center justify-center gap-2 cursor-pointer  text-primary";
+    "xl:border hover:bg-light xl:border-primary px-2 lg:py-2 py-3 rounded xl:rounded-full flex items-center justify-center gap-2 cursor-pointer  text-primary";
   const style =
-    "xl:border hover:bg-light xl:border-gary-300 px-3 py-2 rounded xl:rounded-full flex items-center justify-center gap-2 cursor-pointer  text-dark";
+    "xl:border hover:bg-light xl:border-gary-300 px-2 lg:py-2 py-3 rounded xl:rounded-full flex items-center justify-center gap-2 cursor-pointer  text-dark";
   return (
-    <div className="xl:border-b xl:border-gray-200 pb-6 pt-2 xl:pt-0 pr-3">
+    <div className="xl:border-b xl:border-gray-200 pb-6 pt-2 xl:pt-0">
       <p className="text-dark/50 text-sm my-4 hidden xl:block">Discover</p>
       <div className="lg:block hidden">
         <div className="flex flex-wrap gap-3 justify-start ">
