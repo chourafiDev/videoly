@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/Notes.md
 /.pnp
 .pnp.js
 
@@ -36,4 +37,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/Notes.md
+
