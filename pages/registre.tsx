@@ -4,7 +4,7 @@ import { IUser } from "../types";
 //Redux
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState, AppDispatch } from "../redux/store";
-import { register } from "../redux/features/auth/authSlice";
+import { register, reset } from "../redux/features/auth/authSlice";
 
 import ButttonLoader from "../components/Utils/ButttonLoader";
 import Router from "next/router";
@@ -32,9 +32,13 @@ const Registre = () => {
     }
 
     if (isSuccess) {
-      Router.push("/");
+      Router.push("/login");
     }
-  }, [isError, isSuccess, messageError]);
+
+    return () => {
+      dispatch(reset());
+    };
+  }, [dispatch, isError, isSuccess, messageError]);
 
   //handle inputs changed
   const handleInputsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -47,7 +51,7 @@ const Registre = () => {
     e.preventDefault();
 
     const userData: IUser = { userName, email, password, name };
-    console.log("userData", userData);
+
     dispatch(register(userData));
   };
 
