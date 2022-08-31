@@ -180,7 +180,7 @@ const Navbar = ({ searchTerm }: Props) => {
         >
           {user ? (
             <div className="flex flex-col gap-3">
-              <Link href="/upload">
+              <Link href="/me">
                 <a className="bg-gray-100 hover:bg-gray-200 duration-200 ease-in flex items-center gap-2 py-1 px-3">
                   <p className="font-semibold text-gray-800">{user.userName}</p>
                   <img
