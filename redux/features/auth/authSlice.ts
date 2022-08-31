@@ -51,6 +51,7 @@ export const authSlice = createSlice({
     builder //Register user
       .addCase(register.pending, (state) => {
         state.isLoading = true;
+        state.isSuccess = false;
       })
       .addCase(register.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -61,6 +62,7 @@ export const authSlice = createSlice({
       .addCase(register.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
+        state.isSuccess = false;
         state.messageError = action.payload;
       });
   },

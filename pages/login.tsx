@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { signIn } from "next-auth/react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 //Redux
-import { useDispatch } from "react-redux";
-import type { AppDispatch } from "../redux/store";
 import Router from "next/router";
 
 import ButttonLoader from "../components/Utils/ButttonLoader";
@@ -43,53 +43,59 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-auth">
-      <Head>
-        <title>Sign In</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
-      <div>
-        <form onSubmit={submitLoginHandler} className="custome-shadow card">
-          <div className="text-center mb-8">
-            <h1 className="font-bold text-dark/90 text-2xl mb-2">Sign In</h1>
-            <p className="text-[13px] text-gray-500 px-10">
-              Keep sign in to add videos and get more features
-            </p>
-          </div>
+    <>
+      <div className="flex justify-center items-center h-screen bg-auth">
+        <Head>
+          <title>Sign In</title>
+          <meta charSet="utf-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+        </Head>
+        <div>
+          <form onSubmit={submitLoginHandler} className="custome-shadow card">
+            <div className="text-center mb-8">
+              <h1 className="font-bold text-dark/90 text-2xl mb-2">Sign In</h1>
+              <p className="text-[13px] text-gray-500 px-10">
+                Keep sign in to add videos and get more features
+              </p>
+            </div>
 
-          <div className="flex flex-col justify-center space-y-3 mt-5 mb-1">
-            <input
-              type="email"
-              className="input-outline"
-              value={email}
-              name="email"
-              onChange={handleInputsChange}
-              placeholder="Enter email address"
-            />
-            <input
-              type="password"
-              className="input-outline"
-              value={password}
-              name="password"
-              onChange={handleInputsChange}
-              placeholder="Enter password"
-            />
-          </div>
-          <button className="btn btn-primary mt-5 mb-4" disabled={loading}>
-            {loading ? <ButttonLoader text="Login" /> : "Login"}
-          </button>
-          <p className="text-center text-sm">
-            Don’t have an account?{" "}
-            <Link href="/registre">
-              <a className="text-primary cursor-pointer font-semibold">
-                Sign up
-              </a>
-            </Link>
-          </p>
-        </form>
+            <div className="flex flex-col justify-center space-y-3 mt-5 mb-1">
+              <input
+                type="email"
+                className="input-outline"
+                value={email}
+                name="email"
+                onChange={handleInputsChange}
+                placeholder="Enter email address"
+              />
+              <input
+                type="password"
+                className="input-outline"
+                value={password}
+                name="password"
+                onChange={handleInputsChange}
+                placeholder="Enter password"
+              />
+            </div>
+            <button className="btn btn-primary mt-5 mb-4" disabled={loading}>
+              {loading ? <ButttonLoader text="Login" /> : "Login"}
+            </button>
+            <p className="text-center text-sm">
+              Don’t have an account?{" "}
+              <Link href="/registre">
+                <a className="text-primary cursor-pointer font-semibold">
+                  Sign up
+                </a>
+              </Link>
+            </p>
+          </form>
+        </div>
       </div>
-    </div>
+      <ToastContainer position="top-center" />
+    </>
   );
 };
 
