@@ -54,7 +54,7 @@ const Registre = () => {
   return (
     <div className="flex justify-center items-center h-screen bg-auth">
       <Head>
-        <title>Login</title>
+        <title>Sign Up</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
@@ -101,7 +101,7 @@ const Registre = () => {
             />
           </div>
           <button className="btn btn-primary mt-5 mb-4" disabled={isLoading}>
-            {isLoading ? <ButttonLoader text="Regsiter" /> : "Regsiter"}
+            {isLoading ? <ButttonLoader text="Sign Up" /> : "Sign Up"}
           </button>
           <p className="text-center text-sm">
             Already have an account?{" "}
