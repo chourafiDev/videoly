@@ -26,8 +26,15 @@ import {
   updateProfile,
 } from "../redux/features/user/userSlice";
 import ButttonLoader from "../components/Utils/ButttonLoader";
-import { GetServerSideProps } from "next";
+import {
+  GetServerSideProps,
+  GetServerSidePropsContext,
+  GetServerSidePropsResult,
+  PreviewData,
+} from "next";
 import { getSession } from "next-auth/react";
+import { ParsedUrlQuery } from "querystring";
+import { Session } from "next-auth";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -433,8 +440,8 @@ const Me = () => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps =
-  wrapper.getServerSideProps(() => async (context) => {
+export const getServerSideProps = wrapper.getServerSideProps(
+  () => async (context) => {
     const session = await getSession({ req: context.req });
 
     if (!session) {
@@ -449,6 +456,7 @@ export const getServerSideProps: GetServerSideProps =
     return {
       props: { session },
     };
-  });
+  }
+);
 
 export default Me;
