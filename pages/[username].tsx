@@ -58,13 +58,13 @@ const Profile = () => {
           />
         </Head>
         <Layout searchValue="">
-          <div className="flex gap-6 md:gap-20 xl:mx-24">
+          <div className="flex gap-0 md:gap-20 xl:mx-24">
             <Sidebar />
             <div className="ml-auto lg:w-[65%] w-full mt-20 lg:pr-0 pl-4 md:pl-0 md:pr-8 pr-4">
               {!isLoading ? (
                 user ? (
                   <>
-                    <div className="flex items-center gap-6">
+                    <div className="flex md:flex-row flex-col  items-center gap-6">
                       <img
                         alt={fullName}
                         className="w-20 rounded-full"
@@ -77,21 +77,21 @@ const Profile = () => {
 
                       <div className="w-full flex justify-between">
                         <div>
-                          <h2 className="text-[22px] font-bold text-dark">
+                          <h2 className="md:text-[22px] text-[18px] font-bold text-dark">
                             {user?.userName}
                           </h2>
-                          <h3 className="text-sm font-semibold text-dark/80">
+                          <h3 className="md:text-sm text-[14px] font-semibold text-dark/80">
                             {fullName}
                           </h3>
                         </div>
 
-                        <button className="btn btn-primary w-28 h-10 p-0 rounded-[5px]">
+                        <button className="btn btn-primary w-28 md:h-10 h-8 p-0 rounded-[5px]">
                           Follow
                         </button>
                       </div>
                     </div>
 
-                    <div className="flex gap-10 mt-10">
+                    <div className="flex md:gap-10 gap-4 mt-10">
                       <p className="flex gap-3 text-[14px]">
                         <strong>20</strong>
                         Following
@@ -140,7 +140,7 @@ const Profile = () => {
                         </Tab.List>
                         <Tab.Panels className="mt-8">
                           <Tab.Panel>
-                            <div className="flex gap-4">
+                            <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
                               {user?.posts && user?.posts.length > 0 ? (
                                 user?.posts.map((post) => (
                                   <SmallVideo key={post._id} post={post} />

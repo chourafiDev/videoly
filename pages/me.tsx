@@ -168,7 +168,7 @@ const Me = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Layout searchValue="">
-        <div className="flex gap-6 md:gap-20 xl:mx-24">
+        <div className="flex gap-0 md:gap-20 xl:mx-24">
           <Sidebar />
 
           <div className="ml-auto lg:w-[65%] w-full mt-20 lg:pr-0 pl-4 md:pl-0 md:pr-8 pr-4">
@@ -184,10 +184,10 @@ const Me = () => {
               />
 
               <div>
-                <h2 className="text-[22px] font-bold text-dark">
+                <h2 className="md:text-[22px] text-[18px] font-bold text-dark">
                   {user?.userName}
                 </h2>
-                <h3 className="text-sm font-semibold text-dark/80">
+                <h3 className="md:text-sm text-[14px] font-semibold text-dark/80">
                   {fullName}
                 </h3>
                 <button
@@ -249,7 +249,7 @@ const Me = () => {
                 </Tab.List>
                 <Tab.Panels className="mt-8">
                   <Tab.Panel>
-                    <div className="flex gap-4">
+                    <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
                       {publicPosts && publicPosts.length > 0 ? (
                         publicPosts.map((post) => (
                           <SmallVideo key={post._id} post={post} />
@@ -260,7 +260,7 @@ const Me = () => {
                     </div>
                   </Tab.Panel>
                   <Tab.Panel>
-                    <div className="flex gap-4">
+                    <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
                       {privatePosts && privatePosts.length > 0 ? (
                         privatePosts.map((post) => (
                           <SmallVideo key={post._id} post={post} />
@@ -312,36 +312,38 @@ const Me = () => {
                   </Dialog.Title>
                   <hr />
 
-                  <div className=" p-6">
-                    <div className="flex items-center gap-40">
+                  <div className="p-6">
+                    <div className="flex md:flex-row flex-col items-center md:gap-40 gap-6">
                       <label className="font-semibold text-dark text-[16px]">
                         Profile photo
                       </label>
-                      <div className=" relative">
-                        <img src={imagePrev} className="w-24 rounded-full" />
-                        <AiOutlineEdit
-                          onClick={() => {
-                            fileRef.current?.click();
-                          }}
-                          className="absolute text-dark/70 cursor-pointer bottom-0 right-0 p-1 w-8 h-8 bg-white rounded-full border border-dark/30"
+                      <div>
+                        <div className=" relative">
+                          <img src={imagePrev} className="w-24 rounded-full" />
+                          <AiOutlineEdit
+                            onClick={() => {
+                              fileRef.current?.click();
+                            }}
+                            className="absolute text-dark/70 cursor-pointer bottom-0 right-0 p-1 w-8 h-8 bg-white rounded-full border border-dark/30"
+                          />
+                        </div>
+                        <input
+                          type="file"
+                          name="image"
+                          ref={fileRef}
+                          className="w-0 h-0"
+                          onChange={handelChange}
                         />
                       </div>
-                      <input
-                        type="file"
-                        name="image"
-                        ref={fileRef}
-                        className="w-0 h-0"
-                        onChange={handelChange}
-                      />
                     </div>
 
                     <hr className="my-6" />
 
-                    <div className="flex justify-between">
-                      <label className="font-semibold text-dark text-[16px]">
+                    <div className="flex md:gap-20 gap-0 md:flex-row flex-col justify-between">
+                      <label className="font-semibold w-24 mb-2 md:mb-0 text-dark text-[16px]">
                         Username
                       </label>
-                      <div className="w-96 mr-24">
+                      <div className="w-full">
                         <input
                           type="text"
                           placeholder="Username"
@@ -363,11 +365,11 @@ const Me = () => {
 
                     <hr className="my-6" />
 
-                    <div className="flex justify-between ">
-                      <label className="font-semibold text-dark text-[16px]">
+                    <div className="flex md:gap-20 gap-0 md:flex-row flex-col justify-between ">
+                      <label className="font-semibold w-24 mb-2 md:mb-0 text-dark text-[16px]">
                         Name
                       </label>
-                      <div className="w-96 mr-24">
+                      <div className="w-full">
                         <input
                           type="text"
                           placeholder="Name"
@@ -381,11 +383,11 @@ const Me = () => {
 
                     <hr className="my-6" />
 
-                    <div className="flex justify-between">
-                      <label className="font-semibold text-dark text-[16px]">
+                    <div className="flex md:gap-20 gap-0 md:flex-row flex-col justify-between">
+                      <label className="font-semibold w-24 mb-2 md:mb-0 text-dark text-[16px]">
                         Bio
                       </label>
-                      <div className="w-96 mr-24">
+                      <div className="w-full">
                         <textarea
                           placeholder="Bio"
                           className="input w-full font-normal"
