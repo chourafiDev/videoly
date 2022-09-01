@@ -193,7 +193,7 @@ const Index: NextPage<IProps> = ({ post, postState, handleLikeAnUnlike }) => {
             </Link>
             <div className="relative">
               <div
-                className={`bg-white absolute bottom-12 -left-3 custome-shadow py-2 rounded-md w-[300px] cursor-pointer ${
+                className={`bg-white absolute bottom-12 lg:-left-3 -left-64 custome-shadow py-2 rounded-md w-[300px] cursor-pointer ${
                   showShare ? "block" : "hidden"
                 }`}
                 onMouseOver={() => setShowShare(true)}
@@ -223,7 +223,7 @@ const Index: NextPage<IProps> = ({ post, postState, handleLikeAnUnlike }) => {
                     Share to Twitter
                   </p>
                 </div>
-                <div className="bg-white w-4 h-4 rotate-45 translate-x-6 translate-y-4"></div>
+                <div className="bg-white w-4 h-4 rotate-45 translate-x-6 translate-y-4 hidden lg:block"></div>
               </div>
               <div
                 className="bg-gray-200 hover:bg-gray-300 duration-200 ease-linear cursor-pointer rounded-full p-2"
