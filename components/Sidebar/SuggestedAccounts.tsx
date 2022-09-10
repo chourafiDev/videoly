@@ -20,8 +20,8 @@ const SuggestedAccounts = () => {
       <p className="text-dark/50 text-sm my-4 hidden xl:block">
         Suggested accounts
       </p>
-      <div className="flex lg:justify-start justify-center">
-        <ul className="">
+      <div className="">
+        <ul className="w-full mx-auto">
           {users &&
             users.map((user) => (
               <li key={user._id} className="relative">
