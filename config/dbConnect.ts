@@ -16,9 +16,9 @@ const dbConnect = () => {
     .connect(MONGO_URL, {
       // MONGO_OPTIONS,
     })
-    .then(() => console.log("connect to database"))
+    .then((conn) => console.log(`✔️ [MonogDb]: MongoDb Success Connected`))
     .catch((error) =>
-      console.log(error.message, "Faild to connect to database")
+      console.log(error.message, "Failed to connect to database")
     );
 };
 
