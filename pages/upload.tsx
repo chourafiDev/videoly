@@ -342,7 +342,7 @@ const Upload = () => {
                     </p>
                   )}
                 </div>
-                <div className="flex gap-10 xl:w-[50%] md:w-[80%] w-full mt-20">
+                <div className="flex gap-4 xl:w-[50%] md:w-[80%] w-full mt-20">
                   <button
                     className="btn-light btn-light-primary"
                     onClick={() => {}}
@@ -394,7 +394,7 @@ const Upload = () => {
                         </p>
                       </Dialog.Title>
 
-                      <div className="flex gap-10">
+                      <div className="flex gap-4">
                         <button
                           className="btn-outline btn-outline-primary outline-none"
                           onClick={() => router.push("/")}
