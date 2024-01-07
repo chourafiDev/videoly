@@ -11,10 +11,10 @@ const SearchUser = ({ user }: IProps) => {
   return (
     <Link href={`/${user.userName}`}>
       <a>
-        <div className="flex gap-4 border-b border-gray-300 py-5">
+        <div className="flex gap-4 border-b border-gray-100 pb-3">
           <img
             alt={user.userName}
-            className="w-12 rounded-full"
+            className="w-14 h-14 rounded-full"
             src={
               user?.image?.url ? user?.image.url : "/assets/default_profile.png"
             }
@@ -23,8 +23,8 @@ const SearchUser = ({ user }: IProps) => {
             <p className="font-bold text-[17px] text-dark flex gap-2 items-center">
               {user.userName} <GoVerified className="text-blue-400" />
             </p>
-            <p className="text-gray-600">{user.name}</p>
-            <p className="text-gray-600">{user.bio && user.bio}</p>
+            <p className="text-gray-800 text-sm">{user.name}</p>
+            <p className="text-gray-400 text-sm">{user.bio && user.bio}</p>
           </div>
         </div>
       </a>

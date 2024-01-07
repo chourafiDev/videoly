@@ -3,13 +3,9 @@ import React, { useState } from "react";
 import NoResults from "../../components/NoResults";
 import { IPost, IUser, ISearchData } from "../../types";
 import { Tab } from "@headlessui/react";
-import axios from "axios";
-import { useSelector, useDispatch } from "react-redux";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Head from "next/head";
-import { searchPosts, reset } from "../../redux/features/post/postSilce";
-import type { AppDispatch } from "../../redux/store";
-import { Transition } from "@headlessui/react";
+import { searchPosts } from "../../redux/features/post/postSilce";
 import Layout from "../../components/Layout";
 import { wrapper } from "../../redux/store";
 import SearchVideo from "../../components/Video/searchVideo";
@@ -30,7 +26,7 @@ const Search = ({ data, searchValue }: IProps) => {
   return (
     <>
       <Head>
-        <title>Find {searchValue}</title>
+        <title>Videoly | {searchValue}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
@@ -67,10 +63,15 @@ const Search = ({ data, searchValue }: IProps) => {
               </Tab.List>
               <Tab.Panels className="">
                 <Tab.Panel>
-                  <div className="flex flex-col gap-10 videos rounded-md h-full px-2 cursor-pointer hover:bg-gray-50 duration-200 ease-linear">
+                  <div className="flex flex-col gap-4 videos rounded-md h-full p-2 pt-3">
                     {users && users.length > 0 ? (
                       users.map((user: IUser) => (
-                        <SearchUser user={user} key={user._id} />
+                        <>
+                          <SearchUser user={user} key={user._id} />
+                          <SearchUser user={user} key={user._id} />
+                          <SearchUser user={user} key={user._id} />
+                          <SearchUser user={user} key={user._id} />
+                        </>
                       ))
                     ) : (
                       <NoResults />
@@ -78,7 +79,7 @@ const Search = ({ data, searchValue }: IProps) => {
                   </div>
                 </Tab.Panel>
                 <Tab.Panel>
-                  <div className="grid md:grid-cols-3 grid-cols-1 gap-10 mt-4">
+                  <div className="grid md:grid-cols-3 grid-cols-1 gap-5 mt-3">
                     {posts && posts.length > 0 ? (
                       posts.map((post: IPost) => (
                         <SearchVideo post={post} key={post._id} />

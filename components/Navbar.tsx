@@ -70,7 +70,7 @@ const Navbar = ({ searchTerm }: Props) => {
   };
 
   return (
-    <div className="w-full z-10 fixed bg-white flex justify-between items-center md:gap-0 gap-3 py-2 xl:px-28 md:px-10 px-2 border-b-2 border-gray-200">
+    <nav className="w-full z-10 fixed bg-white flex justify-between items-center md:gap-0 gap-3 py-2 xl:px-28 md:px-10 px-2 border-b-2 border-gray-200">
       <div className="w-[100px] md:w-[130px]">
         <Link href="/">
           <a
@@ -146,29 +146,20 @@ const Navbar = ({ searchTerm }: Props) => {
             </div>
           </div>
         ) : (
-          <div className="flex gap-3 items-center">
-            <button
-              className="btn-light btn-light-primary flex items-center gap-2"
-              onClick={handleUploadRequired}
-            >
-              <GrAdd />
-              Upload
-            </button>
-            <Link href="/login">
-              <button className="btn btn-primary px-6">Login</button>
-            </Link>
-          </div>
+          <Link href="/login">
+            <button className="btn btn-primary px-6">Login</button>
+          </Link>
         )}
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 md:hidden">
         <FiSearch
           onClick={() => setShowSearch(!showSearch)}
-          className="block md:hidden bg-gray-100 p-2 rounded-full text-dark w-8 h-8 z-50"
+          className="bg-gray-100 p-2 rounded-full text-dark w-8 h-8 z-50"
         />
         <HiMenu
           onClick={() => setShowMenu(!showMenu)}
-          className="block xl:hidden bg-gray-100 p-2 rounded-full text-dark w-8 h-8 z-50"
+          className="bg-gray-100 p-2 rounded-full text-dark w-8 h-8 z-50"
         />
       </div>
 
@@ -215,18 +206,9 @@ const Navbar = ({ searchTerm }: Props) => {
               </div>
             </div>
           ) : (
-            <div className="flex gap-3 flex-col">
-              <button
-                className="btn-light btn-light-primary flex items-center gap-2"
-                onClick={handleUploadRequired}
-              >
-                <GrAdd />
-                Upload
-              </button>
-              <Link href="/login">
-                <button className="btn btn-primary px-6">Login</button>
-              </Link>
-            </div>
+            <Link href="/login">
+              <button className="btn btn-primary px-6">Login</button>
+            </Link>
           )}
         </div>
       )}
@@ -258,7 +240,7 @@ const Navbar = ({ searchTerm }: Props) => {
           </div>
         </div>
       )}
-    </div>
+    </nav>
   );
 };
 
