@@ -6,7 +6,6 @@ import Sidebar from "../components/Sidebar/Sidebar";
 import { Tab } from "@headlessui/react";
 import SmallVideo from "../components/Video/SmallVideo";
 import NoResults from "../components/NoResults";
-import { toast } from "react-toastify";
 import DotLoader from "react-spinners/DotLoader";
 import Layout from "../components/Layout";
 
