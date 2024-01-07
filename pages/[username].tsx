@@ -50,7 +50,7 @@ const Profile = () => {
     <div>
       <>
         <Head>
-          <title>@{fullName}</title>
+          <title>Videoly | @{fullName}</title>
           <meta charSet="utf-8" />
           <meta
             name="viewport"
