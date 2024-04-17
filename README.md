@@ -1,3 +1,7 @@
+ <div align=start>
+        <img src="https://res.cloudinary.com/abdelmonaime/image/upload/v1713343179/tiktok_clone/favicon_oq7jud.png" alt="Journey waypoints" height="150">
+ </div>
+
 # Videoly
 
 Videoly is a full-featured clone of TikTok, designed to demonstrate the capabilities of modern web technologies including Next.js, TypeScript, Redux Toolkit, and MongoDB. This application allows users to upload, share, and view short video clips, similar to the popular TikTok platform.
