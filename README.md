@@ -1,5 +1,5 @@
  <div align=start>
-        <img src="https://res.cloudinary.com/abdelmonaime/image/upload/v1713343179/tiktok_clone/favicon_oq7jud.png" alt="Journey waypoints" height="100">
+        <img src="https://res.cloudinary.com/abdelmonaime/image/upload/v1713343179/tiktok_clone/favicon_oq7jud.png" alt="Journey waypoints" height="80">
  </div>
 
 # Videoly
